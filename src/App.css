@@ -6,16 +6,3 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
-
-section {
-  height: 100vh;
-  width: 100%;
-}
-
-section:nth-child(even) {
-  background: salmon;
-}
-
-section:nth-child(odd) {
-  background: rebeccapurple;
-}

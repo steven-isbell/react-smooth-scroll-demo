@@ -6,49 +6,33 @@ class Header extends React.Component {
     el.scrollIntoView({ behavior: 'smooth' });
   };
   render() {
+    const renderLinks = this.props.numberOfSections.map((v, i) => (
+      <div
+        key={i}
+        style={{
+          border:
+            this.props.section === `section${i + 1}` ? '1px solid black' : '',
+          padding: '10px'
+        }}
+        onClick={() => this.handleScrollIntoView(`section${i + 1}`)}
+      >
+        {`Section${i + 1}`}
+      </div>
+    ));
     return (
       <header
         style={{
           display: 'flex',
           justifyContent: 'space-evenly',
+          alignItems: 'center',
           position: 'sticky',
           top: '0',
           width: '100vw',
-          background: 'orange'
+          background: 'orange',
+          height: '5vh'
         }}
       >
-        <div
-          style={{
-            border: this.props.section === 'section1' ? '1px solid black' : ''
-          }}
-          onClick={() => this.handleScrollIntoView('section1')}
-        >
-          Section1
-        </div>
-        <div
-          style={{
-            border: this.props.section === 'section2' ? '1px solid black' : ''
-          }}
-          onClick={() => this.handleScrollIntoView('section2')}
-        >
-          Section2
-        </div>
-        <div
-          style={{
-            border: this.props.section === 'section3' ? '1px solid black' : ''
-          }}
-          onClick={() => this.handleScrollIntoView('section3')}
-        >
-          Section3
-        </div>
-        <div
-          style={{
-            border: this.props.section === 'section4' ? '1px solid black' : ''
-          }}
-          onClick={() => this.handleScrollIntoView('section4')}
-        >
-          Section4
-        </div>
+        {renderLinks}
       </header>
     );
   }
