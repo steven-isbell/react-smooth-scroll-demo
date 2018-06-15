@@ -14,7 +14,6 @@ class App extends Component {
         <section id="section1">
           <Waypoint
             onEnter={() => this.setState({ section: 'section1' })}
-            onLeave={() => this.handleScrollLeave('section1')}
             bottomOffset="20px"
             topOffset="-20px"
           />
@@ -22,7 +21,6 @@ class App extends Component {
         <section id="section2">
           <Waypoint
             onEnter={() => this.setState({ section: 'section2' })}
-            onLeave={() => this.handleScrollLeave('section2')}
             bottomOffset="20px"
             topOffset="-20px"
           />
@@ -30,7 +28,6 @@ class App extends Component {
         <section id="section3">
           <Waypoint
             onEnter={() => this.setState({ section: 'section3' })}
-            onLeave={() => this.handleScrollLeave('section3')}
             bottomOffset="20px"
             topOffset="-20px"
           />
@@ -38,7 +35,6 @@ class App extends Component {
         <section id="section4">
           <Waypoint
             onEnter={() => this.setState({ section: 'section4' })}
-            onLeave={() => this.handleScrollLeave('section4')}
             bottomOffset="20px"
             topOffset="-20px"
           />
