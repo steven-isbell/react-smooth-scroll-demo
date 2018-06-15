@@ -1,6 +1,10 @@
 import React from 'react';
 
 class Header extends React.Component {
+  handleScrollIntoView = val => {
+    const el = document.getElementById(val);
+    el.scrollIntoView({ behavior: 'smooth' });
+  };
   render() {
     return (
       <header
@@ -14,32 +18,32 @@ class Header extends React.Component {
         }}
       >
         <div
-          ref={sec1 => {
-            this.section1 = sec1;
+          style={{
+            border: this.props.section === 'section1' ? '1px solid black' : ''
           }}
           onClick={() => this.handleScrollIntoView('section1')}
         >
           Section1
         </div>
         <div
-          ref={sec2 => {
-            this.section2 = sec2;
+          style={{
+            border: this.props.section === 'section2' ? '1px solid black' : ''
           }}
           onClick={() => this.handleScrollIntoView('section2')}
         >
           Section2
         </div>
         <div
-          ref={sec3 => {
-            this.section3 = sec3;
+          style={{
+            border: this.props.section === 'section3' ? '1px solid black' : ''
           }}
           onClick={() => this.handleScrollIntoView('section3')}
         >
           Section3
         </div>
         <div
-          ref={sec4 => {
-            this.section4 = sec4;
+          style={{
+            border: this.props.section === 'section4' ? '1px solid black' : ''
           }}
           onClick={() => this.handleScrollIntoView('section4')}
         >
